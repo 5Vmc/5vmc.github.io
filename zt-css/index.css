@@ -1,0 +1,77 @@
+.public-header{
+    height: 62px;
+    background: url("../img/background-color.png")
+}
+a,li{
+    color: #ffffff;
+}
+.public-header .header-logo{
+    float: left;
+    width: 232px;
+    height: 62px;
+    background: url("../img/logo.png")
+}
+
+.public-container{
+    position: relative;
+    margin: 0 auto;
+    background: url("../img/background-color.png")
+}
+
+
+#scrolltop {
+	display: none!important
+}
+/*右侧悬浮窗*/
+.side-bar {
+    position: fixed;
+	bottom: 15px;
+	right: 20px;
+	width: 64px;
+	font-size: 14px
+}
+
+.side-bar li {
+	background: #323c51;
+	list-style: none;
+	overflow: visible
+}
+
+.side-bar li a {
+	display: block;
+	width: 64px;
+	height: 26px;
+	text-decoration: none;
+	border-bottom: 1px solid #364F85;
+	padding-top: 44px
+}
+
+.side-bar .last a {
+	border-bottom: none
+}
+
+
+.side-bar .s2 a {
+	background: url(//www.5vmc.com/img/icon-Group.png) center 5px no-repeat;
+}
+
+.side-bar .s2 img {
+	position: absolute;
+	top: -70px;
+	right: 70px;
+	width: 140px;
+	display: none
+}
+
+.side-bar .s2:hover img {
+	display: block
+}
+
+.side-bar li a:link,.side-bar li a:visited {
+	color: #593925;
+	text-align: center
+}
+
+.side-bar li a:hover,.side-bar li a:active {
+	text-decoration: none
+}

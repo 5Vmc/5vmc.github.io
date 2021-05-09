@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="en" id="leekoh">
+
+<head>
+	<meta charset="UTF-8" name="viewport"
+		content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" />
+	<!--<link rel="stylesheet" href="asset/layui/css/layui.css" />-->
+	<link rel="stylesheet" href="//5vmc.com/zt-css/side-bar.css" />
+	<link rel="stylesheet" href="zt-css/pe_reset.css" />
+	<script type="text/javascript" src="zt-js/jquery(mixNIE).1.11.js"></script>
+	<!--<script type="text/javascript" src="asset/layui/layui.js"></script>-->
+	<title>在线CPS测试_鼠标点击速度测试</title>
+	<link rel="shortcut icon" href="favicon.ico">
+	<meta name="keywords" content="CPS, CPS测试, 手速, 点击速度测试, 鼠标点击速度">
+	<meta name="description" content="提供cps在线测试，测试手速工具,cps点击测试等功能,连点器速度限制标准测了才知道！,我的世界,手速测试">
+	<script data-ad-client="ca-pub-4065335304000723" async
+		src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+</head>
+<style>
+	/*
+感谢你对本工具的认可与支持，工具由无为生存服提供
+www.5Vmc.com/cps
+也希望您搬运时保留作者信息，以便于鼓励作者继续更新优化
+*/
+	body {
+		background-image: url("//mc.netease.com/zt/hcb/img/background.jpg");
+	}
+
+	.cps-container {
+		background-color: #f4f4f4;
+		font-family: Microsoft Yahei;
+		font-weight: 300;
+		font-size: 24px;
+		overflow: auto;
+		width: 90%;
+		margin: auto;
+		margin-top: 2px;
+		overflow-y: hidden;
+	}
+
+	.public-header {
+		background: #333333;
+		height: 50px;
+	}
+
+	.public-container {
+		width: 90%;
+		margin: auto;
+	}
+
+	.header-nav {
+		float: left;
+		list-style: none;
+	}
+
+	.cps-test {
+		padding-top: 100px;
+		position: relative;
+		width: 65%;
+		margin: auto;
+	}
+
+	#reset,
+	#clicker {
+		margin: auto;
+		margin-top: 30px;
+	}
+
+	button {
+		font-family: Microsoft Yahei;
+		font-size: 20px;
+		font-weight: bold;
+	}
+
+	h3 {
+		color: #bd1a16;
+	}
+
+	li {
+		font-size: 20px;
+		line-height: 35px;
+	}
+
+	.rules {
+		margin-top: 35px;
+	}
+
+	.footer {
+		background-color: #fff;
+		width: 90%;
+		height: 75px;
+		margin: auto;
+		padding-top: 15px;
+	}
+
+	.my-text {
+		color: #4c4c4c;
+		font-size: 10px;
+		line-height: 25px;
+	}
+
+	/*弹窗样式*/
+	.pop {
+		position: fixed;
+		width: 100%;
+		height: 100%;
+		display: none;
+		z-index: 99997;
+	}
+
+	.pop_box {
+		width: 80%;
+		height: 70%;
+		position: fixed;
+		left: 50%;
+		top: 25%;
+		margin-left: -40%;
+		margin-top: -6%;
+		border: 5px solid #333;
+		z-index: 99998;
+		background: #f4f4f4;
+	}
+
+	.pop_box2 {
+		width: 60%;
+		height: 60%;
+		position: fixed;
+		left: 50%;
+		top: 25%;
+		margin-left: -30%;
+		margin-top: -3%;
+		border: 5px solid #333;
+		z-index: 99999;
+		background: #9c9c9c;
+		display: none;
+	}
+
+	.side-bar .s3 a {
+		background: url(//www.5vmc.com/img/hongbao.png) center 5px no-repeat;
+	}
+
+	.side-bar .s3 img {
+		position: absolute;
+		top: -70px;
+		right: 70px;
+		width: 140px;
+		display: none
+	}
+
+	.side-bar .s3:hover img {
+		display: block
+	}
+
+	.close_btn {
+		float: right;
+		background: url(//5vmc.com/img/close-btn.png) no-repeat;
+		margin-top: -17px;
+		margin-right: -17px;
+		width: 35px;
+		height: 35px;
+	}
+
+	.cps_ad {
+		text-align: center;
+		font-weight: bold;
+	}
+
+	.cps_ad li {
+		color: #0c4c16 !important;
+		font-size: 18px !important;
+	}
+
+	.ad_img {
+		display: block;
+		height: auto;
+		max-width: 100%;
+		margin: auto;
+	}
+
+	/* 畅言 */
+	.module-cmt-footer {
+		display: none !important;
+	}
+
+	.side-bar {
+		bottom: 42% !important;
+	}
+
+	/*表格样式*/
+	.tg {
+		border-collapse: collapse;
+		border-spacing: 0;
+	}
+
+	.tg td {
+		font-family: Arial, sans-serif;
+		font-size: 14px;
+		padding: 10px 5px;
+		border-style: solid;
+		border-width: 1px;
+		overflow: hidden;
+		word-break: normal;
+		border-color: black;
+	}
+
+	.tg th {
+		font-family: Arial, sans-serif;
+		font-size: 14px;
+		font-weight: normal;
+		padding: 10px 5px;
+		border-style: solid;
+		border-width: 1px;
+		overflow: hidden;
+		word-break: normal;
+		border-color: black;
+	}
+
+	.tg .tg-fkmy {
+		background-color: #ffffff;
+		border-color: #330001;
+		text-align: center;
+		vertical-align: top
+	}
+
+	.tg .tg-c1yj {
+		font-weight: bold;
+		background-color: #ffffff;
+		border-color: #330001;
+		text-align: center;
+		vertical-align: top
+	}
+
+	/*表格样式*/
+</style>
+
+<body>
+	<div class="pop" style="background:rgba(0,0,0,0.5)">
+		<div class="pop_box">
+			<a href="javascript:;" onclick="jQuery('.pop').hide()" class="close_btn"></a>
+			<div class="cps_ad">
+				<ul>
+					<li>因维持网站运行需要成本，设此隐藏的捐赠入口。</li>
+					<li>如果有“支付宝”：可以先领取消费红包，捐赠时红包可以抵扣[红包部分免费]</li>
+					<li>如果有“微信”：可以小额打赏，也可以留下你的名字哦</li>
+					<li>有钱的捧个钱场，免费也能捧个人场</li>
+					<li><img class="ad_img" src="//www.5vmc.com/img/paycode.png" alt="支付方式" style="height:360px"></li>
+					<li>感谢大家的支持，本免费工具将持续为大家服务</li>
+				</ul>
+				<!-- <button href="javascript:;" onclick="jQuery('.pop_box2').show()" class="show">查看赞助名单</button> -->
+				<a style="font-size:20px;color: #ffffff;background-color: #388bff;border-color: #3c8dff #408ffe #3680e6;"
+					title="前往查看" href="//docs.qq.com/sheet/DRENnc2VlcFRVU1Zw" target="_blank" rel="noopener noreferrer">
+					✅查看赞助名单✅ </a>
+			</div>
+		</div>
+	</div>
+	<div class="pop_box2">
+		<a href="javascript:;" onclick="jQuery('.pop_box2').hide()" class="close_btn"></a>
+		<div align="center">
+			<ul>
+				<li>赞助列表</li>
+				<li>（不定期手动更新）</li>
+			</ul>
+			<table class="tg">
+				<tr>
+					<th class="tg-c1yj">时间</th>
+					<th class="tg-c1yj">赞助人</th>
+					<th class="tg-c1yj">支付方式</th>
+					<th class="tg-c1yj" colspan="2">金额（元）</th>
+				</tr>
+				<tr>
+					<td class="tg-fkmy">2018-10-14 19:17</td>
+					<td class="tg-fkmy">匿名</td>
+					<td class="tg-fkmy">微信</td>
+					<td class="tg-fkmy" colspan="2">2.5</td>
+				</tr>
+				<tr>
+					<td class="tg-fkmy">2018-10-14 16:51</td>
+					<td class="tg-fkmy">*荣宁</td>
+					<td class="tg-fkmy">支付宝</td>
+					<td class="tg-fkmy" colspan="2">6</td>
+				</tr>
+				<tr>
+					<td class="tg-fkmy">2018-10-15 20:56</td>
+					<td class="tg-fkmy">匿名</td>
+					<td class="tg-fkmy">微信</td>
+					<td class="tg-fkmy" colspan="2">0.85</td>
+				</tr>
+				<tr>
+					<td class="tg-fkmy">2019-01-24 17:38</td>
+					<td class="tg-fkmy">*天兴</td>
+					<td class="tg-fkmy">支付宝</td>
+					<td class="tg-fkmy" colspan="2">2.0</td>
+				</tr>
+				<tr>
+					<td class="tg-fkmy">2019-01-28 12:29</td>
+					<td class="tg-fkmy">*任</td>
+					<td class="tg-fkmy">支付宝</td>
+					<td class="tg-fkmy" colspan="2">0.1</td>
+				</tr>
+				<tr>
+					<td class="tg-fkmy">2019-04-11 16:36</td>
+					<td class="tg-fkmy">匿名</td>
+					<td class="tg-fkmy">微信</td>
+					<td class="tg-fkmy" colspan="2">0.5</td>
+				</tr>
+				<tr>
+					<td class="tg-fkmy">2019-04-21 15:08</td>
+					<td class="tg-fkmy">*雅琦</td>
+					<td class="tg-fkmy">支付宝</td>
+					<td class="tg-fkmy" colspan="2">1.0</td>
+				</tr>
+				<tr>
+					<td class="tg-fkmy">2019-05-05 10:25</td>
+					<td class="tg-fkmy">灰帽</td>
+					<td class="tg-fkmy">微信</td>
+					<td class="tg-fkmy" colspan="2">0.5</td>
+				</tr>
+				<tr>
+					<td class="tg-fkmy">2019-07-17 11:39</td>
+					<td class="tg-fkmy">*昊</td>
+					<td class="tg-fkmy">支付宝</td>
+					<td class="tg-fkmy" colspan="2">0.02</td>
+				</tr>
+				<tr>
+					<td class="tg-fkmy">2019-08-24 14:12</td>
+					<td class="tg-fkmy">*俊彬</td>
+					<td class="tg-fkmy">支付宝</td>
+					<td class="tg-fkmy" colspan="2">0.36</td>
+				</tr>
+				<tr>
+					<td class="tg-fkmy">2019-11-10 18:17</td>
+					<td class="tg-fkmy">匿名</td>
+					<td class="tg-fkmy">微信</td>
+					<td class="tg-fkmy" colspan="2">0.01</td>
+				</tr>
+				<tr>
+					<td class="tg-fkmy">2020-3-10 16:18</td>
+					<td class="tg-fkmy">匿名</td>
+					<td class="tg-fkmy">微信</td>
+					<td class="tg-fkmy" colspan="2">0.50</td>
+				</tr>
+			</table>
+		</div>
+	</div>
+	<nav>
+		<div class="public-header">
+			<div class="public-container">
+				<a href="//5Vmc.com" target="_blank">
+					<div style="text-align: left;"><img src="//webinput.nie.netease.com/img/mc/logo.png" alt="无为生存服"
+							height="50px" ; title="下面才是测试,别点我"></img></div>
+				</a></div>
+		</div>
+		<div class="cps-container">
+			<div class="cps-test" style="text-align: center">
+				<h3>得分: <span id="clicks">在测试完成后展示</span></h3>
+				<button id="clicker" type="button" style="width: 100%; height: 200px; display: none;">点我</button>
+				<button id="reset" type="button" style="">
+					重新测试
+				</button>
+				<h3 id="countdown"></h3>
+				<div class="rules">
+					<ul>
+						<li>测试模式时，当你第一次点击，计时开始；</li>
+						<li>为了准确测试，将取你10秒内连续点击的平均值；</li>
+						<li>测试结束后展示的结果就是你的最终成绩；</li>
+					</ul>
+				</div>
+			</div>
+			<!--<div class="my-text">由于畅言单方面终止服务，留言板功能将于6月消失，不过CPS测试工具依然会一直存在</div>-->
+			<!--畅言-->
+			<div class="changyan">
+				<div id="SOHUCS" sid="233"></div>
+				<script type="text/javascript">
+					(function () {
+						var appid = 'cytK1cqDN';
+						var conf = 'prod_19097a506e70dc8205bb4ffdab1729e3';
+						var width = window.innerWidth || document.documentElement.clientWidth;
+						if (width < 960) {
+							window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="text/javascript" src="//changyan.sohu.com/upload/mobile/wap-js/changyan_mobile.js?client_id=' + appid + '&conf=' + conf + '"><\/script>');
+						} else { var loadJs = function (d, a) { var c = document.getElementsByTagName("head")[0] || document.head || document.documentElement; var b = document.createElement("script"); b.setAttribute("type", "text/javascript"); b.setAttribute("charset", "UTF-8"); b.setAttribute("src", d); if (typeof a === "function") { if (window.attachEvent) { b.onreadystatechange = function () { var e = b.readyState; if (e === "loaded" || e === "complete") { b.onreadystatechange = null; a() } } } else { b.onload = a } } c.appendChild(b) }; loadJs("//changyan.sohu.com/upload/changyan.js", function () { window.changyan.api.config({ appid: appid, conf: conf }) }); }
+					})(); </script>
+			</div>
+		</div>
+	</nav>
+</body>
+
+</html>
+<script type="text/javascript" src="zt-js/jquery(mixNIE).1.11.js"></script>
+<script src="cps/copyright.js"></script>
+<script>
+	$(function () {
+
+		var _width = $(window).width();
+		var _ziHao = 20 * (_width / 320);
+		if (_width < 641) {
+			$("#leekoh").css({ "font-size": _ziHao + "px" })
+		}
+
+	})
+</script>
+<script type="text/javascript">
+	$(function () {
+		var start;
+		var countdown;
+		var clicks = 0;
+		var active = false;
+		$("#clicker").on("mousedown", function (e) {
+			if (e.which == 1) {
+				if (!active) {
+					start = $.now();
+					active = true;
+					countdown = setInterval(function () { timer() }, 57);
+					clicks = 0;
+				}
+				$(this).blur();
+				clicks++;
+				$('#clicks').html(clicks);
+			}
+		});
+
+		$("#reset").click(function () {
+			if (!active) {
+				$('#reset').hide();
+				$('#clicker').show();
+				$('.progress').show();
+				clicks = 0;
+				$('#clicks').html(clicks);
+				clearInterval(countdown);
+			}
+		});
+
+		function timer() {
+			if (($.now() - start) > 10000) {
+				$('#clicker').hide();
+				$('.countdown').hide();
+				$('#countdown').html('');
+				$('#reset').show();
+				$('#clicks').html((clicks / 10) + ' CPS');
+				active = false;
+				clearInterval(countdown);
+				document.getElementById("clicker").innerHTML = '点我';
+				return;
+			}
+			var t = (start - $.now()) / 1000
+			$('#countdown').html(Math.abs(t));
+		}
+	});
+</script>
+<script type="text/javascript">
+	window.setTimeout(function () {
+		document.body.className = document.body.className.replace('loading', '');
+	}, 10);
+</script>
+<!--呵~百度统计-->
+<script>
+	var _hmt = _hmt || [];
+	(function () {
+		var hm = document.createElement("script");
+		hm.src = "https://hm.baidu.com/hm.js?65d95149b06836d8be99a0e7c66360a8";
+		var s = document.getElementsByTagName("script")[0];
+		s.parentNode.insertBefore(hm, s);
+	})();
+</script>
+
+<!--呵~百度推送-->
+<script>
+	(function () {
+		var bp = document.createElement('script');
+		var curProtocol = window.location.protocol.split(':')[0];
+		if (curProtocol === 'https') {
+			bp.src = '//zz.bdstatic.com/linksubmit/push.js';
+		}
+		else {
+			bp.src = '//push.zhanzhang.baidu.com/push.js';
+		}
+		var s = document.getElementsByTagName("script")[0];
+		s.parentNode.insertBefore(bp, s);
+	})();
+</script>
+<style>
+	/* 畅言fkAD */
+	#MZAD_POP_PLACEHOLDER,
+	#pop_ad,
+	#MZADX_205186_test {
+		margin-top: -250px !important;
+		transform: scale(0)
+	}
+
+	#feedAv {
+		transform: scale(0);
+		margin-top: -150px !important
+	}
+
+	.module-cmt-box {
+		padding: 10px 0 !important;
+		margin-top: -40px !important
+	}
+
+	.header-login {
+		left: 90px !important;
+		border: 0 !important;
+		border-radius: 0 !important;
+		margin-top: 81pt !important;
+		border-radius: 21px !important
+	}
+
+	.post-wrap-border-l,
+	.post-wrap-border-r,
+	.post-wrap-border-t-l,
+	.post-wrap-border-t-r {
+		display: none
+	}
+
+	.post-wrap-main {
+		border: 0 !important
+	}
+
+	.post-wrap-w {
+		background: #f0f0f0
+	}
+
+	.block-head-w {
+		margin-top: -20px !important
+	}
+
+	.section-service-w {
+		height: 0;
+		opacity: 0
+	}
+
+	.head-img-w {
+		margin: 0 !important
+	}
+
+	.head-img-w img {
+		width: 25px !important;
+		height: 25px !important
+	}
+
+	.head-img-w img:hover {
+		transition: all .3s;
+		transform: scale(3)
+	}
+
+	.head-img-w {
+		top: 138px !important;
+		left: 95px !important
+	}
+
+	.wrap-action-gw {
+		border-bottom: 1px solid #dee4e9 !important;
+		padding-top: 30px !important;
+		padding-bottom: 1pc !important
+	}
+
+	/* .cmt-list-number,.title-name-gw-tag,.type-lists,.wrap-name-w{display:none!important}
+.cmt-list-type{margin:0!important} */
+	.build-floor-gw {
+		background: #f0f0f0 !important
+	}
+
+	.block-cont-gw {
+		padding: 20px 0 !important;
+		border: 0 !important
+	}
+
+	.section-list-w {
+		width: 95% !important;
+		margin-left: 2% !important
+	}
+
+	.head-img-gw img:hover {
+		transition: all .3s;
+		transform: scale(.9)
+	}
+
+	/* 畅言fkAD */
+</style>
+<script>
+	//xx畅言
+	function loadCssCode(code) {
+		var style = document.createElement('style');
+		style.type = 'text/css';
+		style.rel = 'stylesheet';
+		//for Chrome Firefox Opera Safari
+		style.appendChild(document.createTextNode(code));
+		//for IE
+		//style.styleSheet.cssText = code;
+		var head = document.getElementsByTagName('head')[0];
+		head.appendChild(style);
+	}
+	var dsq = null;
+	dsq = setInterval('if(document.getElementById("MZAD_POP_PLACEHOLDER")){document.getElementById("MZAD_POP_PLACEHOLDER").id="MZAD_POP_PLACEHOLDER";window.clearInterval(dsq);}', 1000);
+	loadCssCode('#MZAD_POP_PLACEHOLDER{position: absolute !important;z-index: -9999;top: -1000px;}');
+//xx畅言
+</script>
+<div class="side-bar">
+	<ul>
+		<li class="s1 group">
+			<a id="group_url" href="//www.5vmc.com/cps.html" target="_blank" title="新版的CPS测试，欢迎体验" rel="nofollow">
+				<!-- <img src="//www.5vmc.com/img/icon-NewClick.png"> -->
+			</a>
+		</li>
+		<li class="s3 group">
+			<a id="pop_open" href="javascript:;" onclick="jQuery('.pop').show()" title="点击打赏一下" class="show"><img
+					src="//5vmc.com/img/hongbaoma.png"></a>
+		</li>
+		<li class="s2 group">
+			<a id="group_url" href="//qm.qq.com/cgi-bin/qm/qr?k=XBygFN_BbIL4afSTDMzEvGjv6S1f7QJ3" target="_blank"
+				title="哲♂学交流群！千万别点" rel="nofollow">
+				<!-- <img src="//i.loli.net/2019/12/02/m1XtNga6MvAhqul.png"> -->
+			</a>
+		</li>
+	</ul>
+</div>
