@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://5vmc.com</id>
     <title>无为生存服</title>
-    <updated>2021-07-20T17:54:49.846Z</updated>
+    <updated>2021-07-20T18:11:42.370Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://5vmc.com"/>
     <link rel="self" href="https://5vmc.com/atom.xml"/>
@@ -12,8 +12,8 @@
     <rights>All rights reserved 2021, 无为生存服</rights>
     <entry>
         <title type="html"><![CDATA[CPS测试]]></title>
-        <id>https://5vmc.com/post/cps-ce-shi/</id>
-        <link href="https://5vmc.com/post/cps-ce-shi/">
+        <id>https://5vmc.com/post/cps/</id>
+        <link href="https://5vmc.com/post/cps/">
         </link>
         <updated>2021-07-20T17:50:11.000Z</updated>
         <summary type="html"><![CDATA[<p>提供cps在线测试，测试手速工具,cps点击测试等功能,连点器速度限制标准测了才知道！,我的世界,手速测试</p>
