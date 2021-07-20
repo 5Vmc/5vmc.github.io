@@ -46,12 +46,12 @@
                          <article class="mdui-shadow-10 mdui-p-a-2 post-list">
                            <div class="mdui-typo-display-1 mdui-m-b-3">wordpress安装flat主题legacy.php问题解决方案</div>
                            <a  class="index-list-biaoqian ">2021-05-09</a>
-                           <div class="mdui-typo mdui-m-t-3 post-neirong"><figure data-type="image" tabindex="1"><img src="https://5vmc.com/post-images/1620574193643.jpg" alt="" loading="lazy"></figure>
-<h1 id="wordpress安装flat主题后发现文章页多出了下面提示那么如何解决呢">wordpress安装flat主题后，发现文章页多出了下面提示，那么如何解决呢？</h1>
-<h2 id="warning">Warning:</h2>
-<p>Missing argument 1 for cwppos_show_review(), called in /YourWebSite/wp-content/themes/flat/content-single.php on line 29 and defined in  /YourWebSite/wp-content/plugins/wp-product-review/includes/legacy.php on line 18</p>
+                           <div class="mdui-typo mdui-m-t-3 post-neirong"><p>wordpress安装flat主题后，legacy.php出现问题，如何解决呢？</p>
 <!-- more -->
-<figure data-type="image" tabindex="2"><img src="https://5vmc.com/post-images/1620574263751.jpg" alt="" loading="lazy"></figure>
+<p>发现文章页多出了下面提示。</p>
+<h2 id="warning">Warning:</h2>
+<p>Missing argument 1 for cwppos_show_review(), called in /YourWebSite/wp-content/themes/flat/content-single.php on line 29 and defined in  /YourWebSite/wp-content/plugins/wp-product-review/includes/legacy.php on line 18<br>
+<img src="https://5vmc.com/post-images/1620574263751.jpg" alt="" loading="lazy"></p>
 <ul>
 <li>修改为：</li>
 <li><strong>function cwppos_show_review() {</strong></li>
@@ -71,21 +71,27 @@
 
 <div id="gitalk-container"></div>
 
-<script>
-
-  var gitalk = new Gitalk({
-    clientID: '',
-    clientSecret: '',
-    repo: '',
-    owner: '',
-    admin: [''],
-    id: (location.pathname).substring(0, 49),      // Ensure uniqueness and length less than 50
-    distractionFreeMode: false  // Facebook-like distraction free mode
-  })
-
-  gitalk.render('gitalk-container')
-
+<!-- 畅言云评论 -->
+<script language="javascript" type="text/javascript">
+  var sid=(location.pathname).substring(6, 30);
+  document.write('<div id="SOHUCS" sid="'+sid+'"></div>');
 </script>
+<script type="text/javascript"> 
+(function(){ 
+var appid = 'cytK1cqDN'; 
+var conf = 'prod_19097a506e70dc8205bb4ffdab1729e3'; 
+var width = window.innerWidth || document.documentElement.clientWidth; 
+if (width < 1000) {
+var head = document.getElementsByTagName('head')[0]||document.head||document.documentElement;
+var script = document.createElement('script');
+script.type = 'text/javascript';
+script.charset = 'utf-8';
+script.id = 'changyan_mobile_js';
+script.src = 'https://cy-cdn.kuaizhan.com/upload/mobile/wap-js/changyan_mobile.js?client_id=' + appid + '&conf=' + conf;
+head.appendChild(script);
+} else { var loadJs=function(d,a){var c=document.getElementsByTagName("head")[0]||document.head||document.documentElement;var b=document.createElement("script");b.setAttribute("type","text/javascript");b.setAttribute("charset","UTF-8");b.setAttribute("src",d);if(typeof a==="function"){if(window.attachEvent){b.onreadystatechange=function(){var e=b.readyState;if(e==="loaded"||e==="complete"){b.onreadystatechange=null;a()}}}else{b.onload=a}}c.appendChild(b)};loadJs("https://cy-cdn.kuaizhan.com/upload/changyan.js",function(){window.changyan.api.config({appid:appid,conf:conf})}); } })(); </script>
+<!-- 畅言云评论 -->
+
 
           
 
@@ -119,7 +125,7 @@
                          </article>
                  <div class="toc-container mdui-float-right">
                 <ul class="markdownIt-TOC">
-<li><a href="#wordpress%E5%AE%89%E8%A3%85flat%E4%B8%BB%E9%A2%98%E5%90%8E%E5%8F%91%E7%8E%B0%E6%96%87%E7%AB%A0%E9%A1%B5%E5%A4%9A%E5%87%BA%E4%BA%86%E4%B8%8B%E9%9D%A2%E6%8F%90%E7%A4%BA%E9%82%A3%E4%B9%88%E5%A6%82%E4%BD%95%E8%A7%A3%E5%86%B3%E5%91%A2">wordpress安装flat主题后，发现文章页多出了下面提示，那么如何解决呢？</a>
+<li>
 <ul>
 <li><a href="#warning">Warning:</a></li>
 </ul>
@@ -187,8 +193,8 @@ var _hmt = _hmt || [];
 })();
 </script>
 <script data-ad-client="ca-pub-4065335304000723" async="" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" data-checked-head="true"></script>
-<a href="//5vmc.com/post/1" target="_blank">无为生存服</a>
-<a href="http://game10000.com/?from=5Vmc.com" target="_blank">优质手游</a></p>
+<a href="http://www00ue.com/?from=5Vmc.com" target="_blank">0基础学习网</a>
+<p><a href="https://beian.miit.gov.cn/" rel="nofollow" target="_blank">皖ICP备2021009798号-1</a></p></p>
                   </div>
               </footer>
     </body>
