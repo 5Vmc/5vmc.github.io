@@ -4,7 +4,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Page Not Found</title>
+  <head>
+    <!-- 以下方式定时转到其他页面 -->
+    <meta http-equiv="refresh" content="10;url=https://www.5vmc.com">
+    </head>
+    <title>正在前往 - 无为生存服首页</title>
   <style>
     * {
       margin: 0;
@@ -66,7 +70,7 @@
   <div class="box">
     <div class="number">4 0 4</div>
     <div class="text">
-      Page not found
+      哎呦，这个内容可能不见了哦
     </div>
     <div class="btn-container">
       <a class="btn" id="back">
@@ -74,16 +78,19 @@
           <path fill="none" d="M0 0h24v24H0z"/>
           <path d="M5.828 7l2.536 2.536L6.95 10.95 2 6l4.95-4.95 1.414 1.414L5.828 5H13a8 8 0 1 1 0 16H4v-2h9a6 6 0 1 0 0-12H5.828z"/>
         </svg>
-        Back
+        朕知道了
       </a>
     </div>
   </div>
   <footer class="footer">
-    Powered by <a href="https://gridea.dev" target="_blank">Gridea</a>
+    <a href="https://www.5vmc/com" target="_blank">CPS测试</a>丨
+    <a href="https://00ue.com" target="_blank">0基础学习网</a>
   </footer>
   <script>
-    var back = document.getElementById('back')
-    back.onclick = function() { console.log('run...'); history.back() }
+    
+     var back = document.getElementById('back')
+     back.onclick = function() { window.location.href="https://5vmc.com"; }
+    //  back.onclick = function() { console.log('run...'); history.back() }
   </script>
 </body>
 </html>
