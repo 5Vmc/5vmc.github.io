@@ -2,7 +2,6 @@ User-agent: *
 Sitemap: //www.5vmc.com/atom.xml
 Disallow: /mp3/
 Disallow: /wp-
-Disallow: /cp
 Disallow: /zt
 Disallow: /emo
 Disallow: /img/
