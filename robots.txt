@@ -1,5 +1,5 @@
 User-agent: *
-Sitemap: //www.5vmc.com/atom.xml
+Sitemap: https://www.5vmc.com/atom.xml
 Disallow: /mp3/
 Disallow: /wp-
 Disallow: /zt
